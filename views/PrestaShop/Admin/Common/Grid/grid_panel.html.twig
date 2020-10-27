@@ -25,18 +25,16 @@
   {% block grid_panel_header %}
       {% if displayName is not sameas(false) %}
       <div class="card-header js-grid-header">
-          {% if displayName is not sameas(false) %}
-          <h3 class="d-inline-block card-header-title">
-            {{ grid.name }} ({{ grid.data.records_total }})
-          </h3>
-        {% endif %}
+        <h3 class="d-inline-block card-header-title">
+          {{ grid.name }} ({{ grid.data.records_total }})
+        </h3>
         {% block grid_actions_block %}
           <div class="d-inline-block float-right">
             {{ include('@PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig', {'grid': grid}) }}
           </div>
         {% endblock %}
       </div>
-    {% endif %}
+      {% endif %}
   {% endblock %}
 
   {% block grid_panel_body %}
